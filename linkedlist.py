@@ -31,3 +31,14 @@ class LinkedList:
             current.next = new_node
         else:
             self.head = new_node
+
+    def index_of(self,value):
+        current = self.head
+        index = 0
+        while current:
+            if current.get_value == value:
+                return index
+            current = current.next
+            index += 1
+        return -1
+    
