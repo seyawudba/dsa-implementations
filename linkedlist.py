@@ -42,3 +42,24 @@ class LinkedList:
             index += 1
         return -1
     
+    def insert_at(self,value,location):
+        if location < 1 or location > self.length_of() + 1:
+            raise ValueError("Invalid location")
+        
+        
+        new_node = Node(value)
+        current = self.head
+        if location == 1:
+            new_node.next = self.head
+            self.head = new_node
+
+        else:
+            prev = None
+            count = 1
+            while count < location:
+                prev = current
+                current = current.next
+                count += 1
+            prev.next = new_node
+            new_node.next = current
+    
