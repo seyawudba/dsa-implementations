@@ -19,3 +19,15 @@ class LinkedList:
     def __init__(self,head=None):
         """A linkedlist can be defined empty in the initial stage"""
         self.head = head
+    
+    def add_new(self,value):
+        new_node = Node(value)
+        current = self.head
+        prev = None
+        if current:
+            while current.next:
+                prev = current
+                current = current.next
+            current.next = new_node
+        else:
+            self.head = new_node
