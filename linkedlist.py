@@ -75,4 +75,37 @@ class LinkedList:
                 count += 1
             prev.next = new_node
             new_node.next = current
+
+    def remove_at(self,location):
+        count = 1
+        if location < 1 or location > self.length_of():
+            raise ValueError("The location specified does not exist")
+        
+        current = self.head
+        if location == 1:
+           self.head = current.next
+
+        elif location == self.length_of():
+            current = self.head
+            prev = None
+            while current.next:
+                prev = current
+                current = current.next
+                count+=1
+            
+            "This line checks if we're really reached the last element"
+            if count == self.length_of():
+                prev.next = None
+
+        else:
+            prev = None
+            current = self.head
+            while count < location:
+                prev = current
+                current = current.next
+            prev.next = current.next
+
+
+
+
     
