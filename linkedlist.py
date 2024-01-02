@@ -32,6 +32,16 @@ class LinkedList:
         else:
             self.head = new_node
 
+    def length_of(self):
+        current = self.head
+        if current:
+            list_length = 1
+            while current.next:
+                list_length += 1
+                prev = current
+                current = current.next
+            return list_length
+
     def index_of(self,value):
         current = self.head
         index = 0
@@ -52,6 +62,9 @@ class LinkedList:
         if location == 1:
             new_node.next = self.head
             self.head = new_node
+
+        elif location == self.length_of() + 1:
+            self.add_new(value)
 
         else:
             prev = None
