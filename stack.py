@@ -29,4 +29,7 @@ class Stack:
             return not bool(self.stack)
         return bool(self.stack)
     
+    def __repr__(self):
+        return f'{self.stack}'
+    
     
