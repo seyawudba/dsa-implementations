@@ -12,6 +12,17 @@ class Stack:
             return self.top
         return "List is empty."
     
+    def pop(self):
+        if not self.isempty():
+            popped_value = self.stack.pop()
+            if not self.isempty():
+                self.top = self.stack[-1]
+            else:
+                self.top = None
+            return popped_value
+
+        return "Stack contains no elements."
+    
     def isempty(self):
         current = self.top
         if current:
