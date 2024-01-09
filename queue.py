@@ -18,14 +18,17 @@ class Queue:
             return "The queue is empty"
         
         popped_value = self.queue.pop(0)
+        
         if not status:
             self.first = self.queue[0]
         else:
-            return status
+            pass
         return popped_value
     
     def lengthof(self):
-        return len(self.queue)
+        if self.queue:
+            return len(self.queue)
+        return "Empty queue."
     
     def isempty(self):
         status = bool(self.queue)
