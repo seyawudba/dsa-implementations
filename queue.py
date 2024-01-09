@@ -11,7 +11,6 @@ class Queue:
         else:
             self.last = self.queue[-1]
 
-        self.last = self.queue[-1]
 
     def removefrom(self):
         status = self.isempty()
@@ -24,12 +23,12 @@ class Queue:
         else:
             return status
         return popped_value
-        
-
     
-
     def isempty(self):
         status = bool(self.queue)
         if status:
             return not status
         return status
+    
+    def __repr__(self):
+        return f'{self.queue}'
