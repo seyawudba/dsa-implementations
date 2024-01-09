@@ -24,11 +24,15 @@ class Queue:
             return status
         return popped_value
     
+    def lengthof(self):
+        return len(self.queue)
+    
     def isempty(self):
         status = bool(self.queue)
         if status:
             return not status
         return status
+    
     
     def __repr__(self):
         return f'{self.queue}'
